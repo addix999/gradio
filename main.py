@@ -1,7 +1,10 @@
 import gradio as gr
 
-def chatbot(message):
-    return "Balasan: " + message
+def chatbot(msg):
+    return f"Bot: {msg}"
 
-iface = gr.Interface(fn=chatbot, inputs="text", outputs="text", title="Chatbot Gradio Simple")
-iface.launch(server_name="0.0.0.0", server_port=8080, share=True)
+gr.Interface(fn=chatbot, inputs="text", outputs="text").launch(
+    server_name="0.0.0.0",
+    server_port=8080,
+    share=True
+)
